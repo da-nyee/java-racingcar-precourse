@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Position.java : 위치에 대한 클래스
+ * PositionService.java : 위치에 대한 서비스 클래스
  *
  * @author Daeun Lee
  * @version 1.1

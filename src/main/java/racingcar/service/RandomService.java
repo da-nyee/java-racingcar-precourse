@@ -4,7 +4,7 @@ import racingcar.type.BoundaryType;
 import utils.RandomUtils;
 
 /**
- * RandomNumber.java : random 값에 대한 클래스
+ * RandomService.java : random 값에 대한 서비스 클래스
  *
  * @author Daeun Lee
  * @version 1.1

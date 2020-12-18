@@ -4,8 +4,6 @@ import racingcar.domain.Car;
 import racingcar.type.ErrorType;
 import racingcar.type.TextType;
 
-import java.util.List;
-
 /**
  * OutputView.java : 출력을 위한 클래스
  *

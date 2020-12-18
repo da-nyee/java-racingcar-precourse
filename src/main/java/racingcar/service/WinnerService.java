@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Winner.java : 우승자에 대한 클래스
+ * WinnerService.java : 우승자에 대한 서비스 클래스
  *
  * @author Daeun Lee
  * @version 1.1

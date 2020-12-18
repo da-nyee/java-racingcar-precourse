@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
+ * Cars.java : 전체 자동차에 대한 클래스
+ *
  * @author Daeun Lee
  * @version 1.1
  */

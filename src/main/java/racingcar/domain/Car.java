@@ -5,7 +5,7 @@ import racingcar.type.ErrorType;
 import racingcar.type.TextType;
 
 /**
- * Car.java : 각 자동차에 대한 클래스
+ * Car.java : 각 자동차에 대한 도메인 모델 클래스
  *
  * @author Daeun Lee
  * @version 1.1

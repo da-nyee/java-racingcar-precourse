@@ -10,7 +10,7 @@ import racingcar.view.OutputView;
 import java.util.*;
 
 /**
- * RacingController.java : 자동차 경주 게임에 대한 클래스
+ * RacingController.java : 자동차 경주 게임에 대한 컨트롤러 클래스
  *
  * @author Daeun Lee
  * @version 1.1

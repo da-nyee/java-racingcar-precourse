@@ -5,7 +5,7 @@ import racingcar.type.ErrorType;
 import racingcar.type.TextType;
 
 /**
- * OutputView.java : 출력을 위한 클래스
+ * OutputView.java : 출력에 대한 클래스
  *
  * @author Daeun Lee
  * @version 1.1

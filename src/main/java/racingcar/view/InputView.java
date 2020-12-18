@@ -6,7 +6,7 @@ import racingcar.type.ValueType;
 import java.util.*;
 
 /**
- * InputView.java : 입력을 위한 클래스
+ * InputView.java : 입력에 대한 클래스
  *
  * @author Daeun Lee
  * @version 1.1

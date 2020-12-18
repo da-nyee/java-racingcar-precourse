@@ -120,6 +120,13 @@
 
 <br>
 
+## 📚 고려할 리팩토링 목록
+- [ ] MVC 패턴을 적용한다.
+- [ ] 일급 컬렉션을 사용한다.
+- [ ] 1주차, 2주차 피드백을 생각한다.
+
+<br>
+
 ## 📝 License
 
 This project is [MIT](https://github.com/woowacourse/java-racingcar-precourse/blob/master/LICENSE) licensed.

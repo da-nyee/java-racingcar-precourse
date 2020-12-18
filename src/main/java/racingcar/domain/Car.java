@@ -1,18 +1,22 @@
 package racingcar.domain;
 
 import racingcar.type.BoundaryType;
+import racingcar.type.ErrorType;
+import racingcar.type.TextType;
 
 /**
  * Car.java : 자동차에 대한 클래스
  *
  * @author Daeun Lee
- * @version 1.0
+ * @version 1.1
  */
 public class Car {
     private final String name;
     private int position = 0;
 
     public Car(String name) {
+        // 일급 컬렉션
+        isValidCar(name);
         this.name = name;
     }
 
@@ -25,26 +29,25 @@ public class Car {
         return position;
     }
 
-    /**
-     * @param car 자동차
-     */
-    public static void moveCar(Car car) {
-        int randomNumber = RandomNumber.generateRandomNumber();
+    public void movePosition() {
+        position++;
+    }
 
-        if ((BoundaryType.MINIMUM_MOVE_NUMBER.getBoundary() <= randomNumber)
-                && (randomNumber <= BoundaryType.MAXIMUM_MOVE_NUMBER.getBoundary())) {
-            // 자동차는 전진한다.
-            car.movePosition();
-        }
+    public static void isValidCar(String carName) {
+        isValidLength(carName);
+        isValidFormat(carName);
+    }
 
-        if ((BoundaryType.MINIMUM_STOP_NUMBER.getBoundary() <= randomNumber)
-                && (randomNumber <= BoundaryType.MAXIMUM_STOP_NUMBER.getBoundary())) {
-            // 자동차는 멈춘다.
-            return;
+    public static void isValidLength(String carName) {
+        if ((carName.length() < BoundaryType.MINIMUM_CAR_NAME_LENGTH.getBoundary()
+                || (carName.length() > BoundaryType.MAXIMUM_CAR_NAME_LENGTH.getBoundary()))) {
+            throw new IllegalArgumentException(ErrorType.INVALID_LENGTH.getError());
         }
     }
 
-    public void movePosition() {
-        position++;
+    public static void isValidFormat(String carName) {
+        if (carName.contains(TextType.BLANK_TEXT.getText())) {
+            throw new IllegalArgumentException(ErrorType.INVALID_FORMAT.getError());
+        }
     }
 }

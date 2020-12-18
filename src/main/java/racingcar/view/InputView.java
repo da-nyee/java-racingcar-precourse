@@ -1,9 +1,7 @@
 package racingcar.view;
 
-import racingcar.domain.Car;
 import racingcar.type.ErrorType;
-import racingcar.type.TextType;
-import utils.InputUtils;
+import racingcar.type.ValueType;
 
 import java.util.*;
 
@@ -11,41 +9,33 @@ import java.util.*;
  * InputView.java : 입력을 위한 클래스
  *
  * @author Daeun Lee
- * @version 1.0
+ * @version 1.1
  */
 public class InputView {
-    /**
-     * @param scanner 입력 값
-     * @return 자동차를 원소로 가진 리스트
-     */
-    public static ArrayList<Car> scanCars(Scanner scanner) {
-        String scannerCars = scanner.nextLine();
-
-        List<String> carNames =
-                new ArrayList<>(Arrays.asList(scannerCars.split(TextType.COMMA_TEXT.getText())));
-        ArrayList<Car> cars = new ArrayList<>();
-
-        for (String carName : carNames) {
-            cars.add(InputUtils.validateCar(carName));
-        }
-        InputUtils.validateDuplicateCar(cars);
-
-        return cars;
+    public static String scanRacingCars(Scanner scanner) {
+        OutputView.printCarNamesText();
+        return scanner.nextLine();
     }
 
-    /**
-     * @param scanner 입력 값
-     * @return 자동차 경주 게임을 시도할 횟수
-     */
     public static int scanTimes(Scanner scanner) {
-        while (!scanner.hasNextInt()) {
-            scanner.next();
-            System.out.println(ErrorType.INVALID_CHARACTER.getError());
+        OutputView.printRacingTimesText();
+
+        isValidCharacter(scanner);
+        int times = scanner.nextInt();
+        isValidTimes(times);
+
+        return times;
+    }
+
+    public static void isValidCharacter(Scanner scanner) {
+        if (!scanner.hasNextInt()) {
+            throw new IllegalArgumentException(ErrorType.INVALID_CHARACTER.getError());
         }
-        int scannerTimes = scanner.nextInt();
+    }
 
-        InputUtils.validateTimes(scannerTimes);
-
-        return scannerTimes;
+    public static void isValidTimes(int times) {
+        if (times <= ValueType.ZERO.getValue()) {
+            throw new IllegalArgumentException(ErrorType.INVALID_ZERO_TIME.getError());
+        }
     }
 }

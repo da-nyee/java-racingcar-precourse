@@ -71,14 +71,16 @@
         └─main
             └─java
                 ├─racingcar
+                │   ├─controller
+                │   │   └─RacingController.java
                 │   ├─domain
                 │   │   ├─Car.java
-                │   │   ├─CarRacing.java
-                │   │   ├─Initialization.java
-                │   │   ├─Position.java
-                │   │   ├─RandomNumber.java
-                │   │   ├─Result.java
-                │   │   └─Winner.java
+                │   │   └─Cars.java
+                │   ├─service
+                │   │   ├─PositionService.java
+                │   │   ├─RacingService.java
+                │   │   ├─RandomService.java
+                │   │   └─WinnerService.java
                 │   ├─type
                 │   │   ├─BoundaryType.java
                 │   │   ├─ErrorType.java
@@ -89,20 +91,23 @@
                 │   │   └─OutputView.java
                 │   └─Application.java
                 └─utils
-                    ├─InputUtils.java
                     └─RandomUtils.java
 ```
 ### racingcar
 - Application.java : 메인 클래스
 
+#### controller
+- RacingController.java : 자동차 경주 게임에 대한 컨트롤러 클래스
+
 #### domain
-- Car.java : 자동차에 대한 클래스
-- CarRacing.java : 자동차 경주 게임에 대한 클래스
-- Initialization.java : 초기화에 대한 클래스
-- Position.java : 위치에 대한 클래스
-- RandomNumber.java : random 값에 대한 클래스
-- Result.java : 결과에 대한 클래스
-- Winner.java : 우승자에 대한 클래스
+- Car.java : 각 자동차에 대한 도메인 모델 클래스
+- Cars.java : 전체 자동차에 대한 도메인 모델 클래스
+
+#### service
+- PositionService.java : 위치에 대한 서비스 클래스
+- RacingService.java : 자동차 경주 게임에 대한 서비스 클래스
+- RandomService.java : random 값에 대한 서비스 클래스
+- WinnerService.java : 우승자에 대한 서비스 클래스
 
 #### type
 - BoundaryType.java : 최소, 최대 경계 값 상수를 모아둔 Enum 클래스
@@ -111,11 +116,10 @@
 - ValueType.java : 값 상수를 모아둔 Enum 클래스
 
 #### view
-- InputView.java : 입력을 위한 클래스
-- OutputView.java : 출력을 위한 클래스
+- InputView.java : 입력에 대한 클래스
+- OutputView.java : 출력에 대한 클래스
 
 ### utils
-- InputUtils.java : 비정상적인 입력에 대해서는 예외를 발생시키는 클래스
 - RandomUtils.java : 범위 시작, 범위 끝 파라미터에 따라 random 값을 구하는 클래스
 
 <br>
